@@ -1,0 +1,51 @@
+<project name="AAISUtil" default="all" basedir=".">
+
+  <!-- set global properties for this build -->
+  <property environment="env"/>
+  <property file="../../../../../ant/build.properties"/>
+  <property name="build.compiler" value="${JAVAC}"/>
+  <property name="source" value="."/>
+  <property name="build" value="../${source}/build"/> 
+  <property name="dist" value="${source}/dist"/>
+  <property name="jar_file" value="AAISUtil.jar" />
+
+    <property name="FRAMEWORK_JARS_1" value="${APPLICATION_LIB}/framework.jar"/>
+    <property name="AAIS_JARS_1" value="${APPLICATION_LIB}/aais.jar"/>
+    <property name="XML_JARS" value="${APPLICATION_LIB}/jaxp.jar:${APPLICATION_LIB}/parser.jar"/>   
+    <property name="SECR_JARS" value="${APPLICATION_LIB}/sunjce_provider.jar:${APPLICATION_LIB}/jcsi_krb.jar:${APPLICATION_LIB}/jcsi_jce.jar:${APPLICATION_LIB}/jcsi_provider.jar:${APPLICATION_LIB}/jcsi_base.jar"/>
+    <property name="pathele" value="${WL_HOME}:${WL_LIB}:${AAIS_JARS_1}:${FRAMEWORK_JARS_1}:${XML_JARS}:${SECR_JARS}"/>
+
+  <target name="all" depends="clean,init,compile_lib, jar_lib"/>
+
+<target name="clean">
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+    <delete file="${APPLICATION_LIB}/${jar_file}"/>
+  </target>
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile
+    and copy the deployment descriptors into it-->
+    <mkdir dir="${build}"/>
+    <mkdir dir="${dist}"/>
+  </target>
+
+  <!-- Compile ejb classes into the build directory (jar preparation) -->
+  <target name="compile_lib">
+    <javac srcdir="${source}" destdir="${build}"
+       includes="GenGateKeeperFile.java">
+      <classpath>
+        <pathelement path="${pathele}"/>
+      </classpath>
+    </javac>
+  </target>
+	
+  <!-- Update ejb jar file or create it if it doesn't exist, including XML
+	    deployment descriptors -->
+  <target name="jar_lib">
+	    <jar basedir="${build}" jarfile="${dist}/${jar_file}" update="yes"/>
+	    <copy file="${dist}/${jar_file}" todir="${APPLICATION_LIB}"/>
+  </target>
+
+</project>

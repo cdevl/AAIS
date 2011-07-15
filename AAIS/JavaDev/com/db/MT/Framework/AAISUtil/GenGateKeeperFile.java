@@ -14,12 +14,9 @@ import oracle.jdbc.*;
 import com.db.MT.Framework.AAISServiceCo.ConnectionPool;
 import com.db.MT.Framework.AAISServiceCo.ReadProp;
 
-<<<<<<< HEAD
-//b2 change
 
-//b1 change
+//main branch change
 
->>>>>>> 76d6e1c7369ec8e24f0ace40cdfc04fc1b69a95b
 public class GenGateKeeperFile {
 
           private static String  userName = null;

@@ -15,7 +15,7 @@ import com.db.MT.Framework.AAISServiceCo.ConnectionPool;
 import com.db.MT.Framework.AAISServiceCo.ReadProp;
 
 //b1 change
-//b1 change after
+
 public class GenGateKeeperFile {
 
           private static String  userName = null;

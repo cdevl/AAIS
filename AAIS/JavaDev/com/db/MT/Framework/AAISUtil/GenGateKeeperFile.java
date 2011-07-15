@@ -14,7 +14,7 @@ import oracle.jdbc.*;
 import com.db.MT.Framework.AAISServiceCo.ConnectionPool;
 import com.db.MT.Framework.AAISServiceCo.ReadProp;
 
-//test
+//test 1
 public class GenGateKeeperFile {
 
           private static String  userName = null;

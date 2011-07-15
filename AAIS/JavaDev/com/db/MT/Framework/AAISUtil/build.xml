@@ -1,6 +1,6 @@
 <project name="AAISUtil" default="all" basedir=".">
 
-  <!-- set global properties for this build -->
+  <!-- set global properties for this build  test-->
   <property environment="env"/>
   <property file="../../../../../ant/build.properties"/>
   <property name="build.compiler" value="${JAVAC}"/>

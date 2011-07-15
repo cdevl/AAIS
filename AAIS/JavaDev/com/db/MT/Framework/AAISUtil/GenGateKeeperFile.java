@@ -14,8 +14,8 @@ import oracle.jdbc.*;
 import com.db.MT.Framework.AAISServiceCo.ConnectionPool;
 import com.db.MT.Framework.AAISServiceCo.ReadProp;
 
-
 //after tag
+//after v1 and before master
 
 public class GenGateKeeperFile {
 

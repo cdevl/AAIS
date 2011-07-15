@@ -6,6 +6,7 @@ import com.db.MT.Framework.EventCo.*;
 
 
 //first change
+//first Q2 change
 public class AAISApplication {
 
  protected AAISIdentity    m_identity    = new AAISIdentity();

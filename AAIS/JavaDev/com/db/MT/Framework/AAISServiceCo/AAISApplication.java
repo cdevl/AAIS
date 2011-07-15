@@ -4,6 +4,8 @@ import java.io.*;
 //import com.db.MT.Framework.AAISRMIServerCo.Emo;
 import com.db.MT.Framework.EventCo.*;
 
+
+//first change
 public class AAISApplication {
 
  protected AAISIdentity    m_identity    = new AAISIdentity();

@@ -2,6 +2,7 @@
 
   <!-- set global properties for this build -->
   <!--b2a change -->
+  <!--b1 change -->
   <property environment="env"/>
   <property file="../../../../../ant/build.properties"/>
   <property name="build.compiler" value="${JAVAC}"/>
